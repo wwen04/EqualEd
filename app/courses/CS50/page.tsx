@@ -48,7 +48,7 @@ const page = () => {
             <h1 className="text-3xl my-4 font-serif">
               Course Description & Objectives
             </h1>
-            <p>{pageInfo.description}</p>
+            <p className="text-md text-justify">{pageInfo.description}</p>
           </div>
           <iframe
             className="rounded-xl mx-auto"

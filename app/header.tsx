@@ -11,6 +11,8 @@ export default function Header() {
     { name: "My Profile", href: "#" },
   ];
 
+  if (pathname == "/login") return;
+
   return (
     <header className="grid grid-cols-1 lg:grid-cols-2 w-full justify-between p-4 px-16 shadow-lg">
       <Link href="/" className="text-3xl text-green-500 font-bold my-auto">
