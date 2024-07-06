@@ -13,9 +13,9 @@ export default function Header() {
   const navigation = [
     { name: "Courses", href: "/courses" },
     { name: "Evaluation", href: "/teacher/evaluation" },
-    { name: "Find Teachers", href: "#" },
-    { name: "My Profile", href: "#" },
     { name: "My Resources", href: "/resources" },
+    { name: "Find Volunteachers", href: "/student/FindTeacher" },
+    { name: "My Profile", href: "/profile" },
   ];
 
   const onSignOut = async (e: React.FormEvent) => {
@@ -61,13 +61,6 @@ export default function Header() {
             );
           })}
         </nav>
-        <button
-          type="button"
-          onClick={onSignOut}
-          className="hover:bg-red-500 hover:text-white rounded-full px-3 py-1"
-        >
-          Sign out
-        </button>
       </div>
     </header>
   );

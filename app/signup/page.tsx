@@ -1,9 +1,9 @@
 import SignupForm from "./signupForm";
 
-export default function Login() {
-    return (
-        <div>
-            <SignupForm/>
-        </div>
-    );
+export default function Signup() {
+  return (
+    <div>
+      <SignupForm />
+    </div>
+  );
 }
