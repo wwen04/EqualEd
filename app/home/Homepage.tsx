@@ -29,7 +29,9 @@ function Homepage() {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center p-20 text-white">
+
+        <div className="
+        flex flex-col justify-center items-center p-20 text-white">
             <h2 className="text-5xl font-serif text-black mb-6 pb-10 ">Who's logging in today?</h2>
             <div className="flex flex-row mb-4 mt-6 gap-16">
                 <button
@@ -52,7 +54,7 @@ function Homepage() {
             </div>
             <button
                 onClick={onSignOut}
-                className={`bg-red-600 text-white p-2 mt-4 rounded-md ${
+                className={`bg-red-600 text-white p-2 mt-4 rounded-3xl ${
                     isSigningOut ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
             >

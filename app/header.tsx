@@ -11,6 +11,7 @@ export default function Header() {
     { name: "My Profile", href: "#" },
   ];
 
+
   return (
     <header className="grid grid-cols-1 lg:grid-cols-2 w-full justify-between p-4 px-16 shadow-lg">
       <Link href="/home" className="text-3xl text-green-500 font-bold my-auto">
@@ -34,12 +35,7 @@ export default function Header() {
             );
           })}
         </nav>
-        <button
-          type="button"
-          className="px-4 py-2 hover:bg-green-700 hover:text-white rounded-full"
-        >
-          Login
-        </button>
+      
       </div>
     </header>
   );
