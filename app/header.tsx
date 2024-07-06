@@ -12,10 +12,10 @@ export default function Header() {
 
   const navigation = [
     { name: "Courses", href: "/courses" },
+    { name: "My Resources", href: "/resources" },
     { name: "Evaluation", href: "/teacher/evaluation" },
     { name: "Find Teachers", href: "/student/FindTeacher/" },
     { name: "My Profile", href: "/profile" },
-    { name: "My Resources", href: "/resources" },
   ];
 
   const onSignOut = async (e: React.FormEvent) => {
