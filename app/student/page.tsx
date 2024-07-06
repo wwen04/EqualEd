@@ -1,9 +1,9 @@
 export default function StudentPage() {
   return (
-    <main className="m-8 mx-16">
+    <main className="mt-16 mb-8 mx-16">
       <section>
         <div className="flex justify-between border-b-2 border-gray-200 pb-4">
-          <h1 className="text-3xl font-bold font-mono">My Courses</h1>
+          <h1 className="text-5xl font-bold font-mono">My Courses</h1>
           <div className="flex gap-2">
             <button
               type="button"
