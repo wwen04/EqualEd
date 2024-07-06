@@ -3,7 +3,7 @@ import { getFirestore} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCYJoO5faEyRrCtrUyocJV3ISwEvpdOgN4",
+    apiKey: process.env.FIREBASE_API_KEY,
     authDomain: "equaled-37f8a.firebaseapp.com",
     databaseURL: "https://equaled-37f8a-default-rtdb.firebaseio.com",
     projectId: "equaled-37f8a",
