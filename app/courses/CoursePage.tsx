@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-export default function CoursePage({
+export default async function CoursePage({
   pageInfo,
+  preferrence,
 }: {
   pageInfo: {
     courseCode: string;
@@ -11,7 +12,37 @@ export default function CoursePage({
     link: string;
     description: string;
   };
+  preferrence: string;
 }) {
+  const { G4F } = require("g4f");
+  const g4f = new G4F();
+  const description = [
+    {
+      role: "system",
+      content:
+        "You're an expert in translation and rewording. When asked anything, you should only translate the text directly and not ask questions or anything.",
+    },
+    {
+      role: "user",
+      content: `Reword or translate the following in ${preferrence}: ${pageInfo.description}`,
+    },
+  ];
+
+  const courseTitle = [
+    {
+      role: "system",
+      content:
+        "You're an expert in translation and rewording. When asked anything, you should only translate the text directly and not ask questions or anything.",
+    },
+    {
+      role: "user",
+      content: `Reword or translate the following in ${preferrence}: ${pageInfo.courseTitle}`,
+    },
+  ];
+
+  const translated_courseTitle = await g4f.chatCompletion(courseTitle);
+  const translated_description = await g4f.chatCompletion(description);
+
   return (
     <main className="p-16">
       <div className="w-full flex justify-end">
@@ -44,7 +75,7 @@ export default function CoursePage({
       {/* Course Details */}
       <div>
         <h1 className="text-5xl font-mono font-bold border-b-4 border-gray-300 pb-4 mb-4">
-          {pageInfo.courseTitle}
+          {translated_courseTitle}
         </h1>
         <p className="text-xl">Instructor: {pageInfo.teacher}</p>
 
@@ -53,7 +84,7 @@ export default function CoursePage({
             <h1 className="text-3xl my-4 font-serif">
               Course Description & Objectives
             </h1>
-            <p className="text-md text-justify">{pageInfo.description}</p>
+            <p className="text-md text-justify">{translated_description}</p>
           </div>
           <iframe
             className="rounded-xl mx-auto"

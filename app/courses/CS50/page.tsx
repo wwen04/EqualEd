@@ -10,6 +10,7 @@ const pageInfo = {
     "An entry-level course taught by David J. Malan, CS50x teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development.",
 };
 
-export default function Page() {
-  return <CoursePage pageInfo={pageInfo} />;
+export default function Page({ searchParams }: any) {
+  const preferrence = decodeURIComponent(searchParams.pref) || "English";
+  return <CoursePage pageInfo={pageInfo} preferrence={preferrence} />;
 }
