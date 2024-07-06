@@ -8,7 +8,7 @@ const courses: any = [
     courseTitle: "CS50: Introduction to Computer Science",
     teacher: "David J. Malan",
     image: "cs.jpg",
-    link: "/",
+    link: "student/course/cs50",
     description:
       "This course teaches you how to solve problems, both with and without code, with an emphasis on correctness, design, and style.",
     progress: 50,
@@ -18,7 +18,7 @@ const courses: any = [
     courseTitle: "Data Structures and Algorithm",
     teacher: "Elon Musk",
     image: "ds.jpg",
-    link: "/",
+    link: "student/course/cs50",
     description:
       "Embark on a journey to master the essential concepts of data structures and algorithms in this comprehensive course",
     progress: 87,
@@ -63,7 +63,7 @@ export default function StudentPage() {
         {courses.map((course: any, index: number) => {
           return (
             <Link
-              href="/"
+              href={course.link}
               className="w-full border border-gray-300 rounded-xl flex flex-row overflow-clip group hover:scale-y-110 transition-all"
               key={index}
             >
