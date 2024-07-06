@@ -5,7 +5,7 @@ const courses: any = [
     courseTitle: "CS50: Introduction to Computer Science",
     teacher: "David J. Malan",
     image: "cs.jpg",
-    link: "/",
+    link: "courses/CS50",
     description:
       "This course teaches you how to solve problems, both with and without code, with an emphasis on correctness, design, and style.",
   },
