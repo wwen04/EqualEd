@@ -7,8 +7,9 @@ export default function Header() {
   const navigation = [
     { name: "Courses", href: "/courses" },
     { name: "Evaluation", href: "/teacher/evaluation" },
-    { name: "Find Teachers", href: "#" },
+    { name: "Find Teachers", href: "/student/FindTeacher"  },
     { name: "My Profile", href: "/profile" },
+
   ];
 
   if (pathname == "/login") return;
