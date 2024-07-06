@@ -32,28 +32,30 @@ function ResetPasswordForm() {
 //   };
 
     return (
-        <div className="flex flex-col justify-center p-20 items-center text-white m-0">
-            <h2 className="text-3xl font-bold mb-8">Reset your password</h2>
-            <form>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full px-4 py-2 mb-4 bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring focus:border-blue-500"
-                />
-                <button
-                    type="submit"
-                    className={`w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition duration-300 ${isSending ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
-                >
-                    {isSending ? 'Sending...' : 'Send Password Reset Email'}
-                </button>
-            </form>
-            <p className="mt-4">
-                <Link href="/login">Login Here</Link>
-            </p>
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-300 dark:border-gray-500">
+            <div className="flex flex-col justify-center p-20 items-center text-white m-0">
+                <h2 className="text-2xl text-black font-bold mb-8">Reset your password</h2>
+                <form>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="w-full px-4 py-2 mb-4 bg-white text-black rounded-lg shadow-md focus:outline-none focus:ring focus:border-blue-500"
+                    />
+                    <button
+                        type="submit"
+                        className={`w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md transition duration-300 ${isSending ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-700'}`}
+                    >
+                        {isSending ? 'Sending...' : 'Send Password Reset Email'}
+                    </button>
+                </form>
+                <p className="mt-4 text-black">
+                    <Link href="/login">Login Here</Link>
+                </p>
+            </div>
         </div>
     );
 }
