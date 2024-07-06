@@ -7,7 +7,7 @@ const page = () => {
       title: "Rate my teaching material",
       author: "Arnav Krishnan",
       content: "Please rate my presentation slides that I made out of 10.",
-      subject: "Mathematics",
+      subject: "English",
       comment: [
         {
           name: "Lee Chong Wei",
@@ -37,6 +37,22 @@ const page = () => {
         {
           name: "Kevin Hart",
           body: "I can teach you",
+        },
+      ],
+    },
+    {
+      title: "I am having trouble solving this problem",
+      author: "Beetlejuice",
+      content: "What is 10 + 9?",
+      subject: "Mathematics",
+      comment: [
+        {
+          name: "Isaac Newton",
+          body: "19",
+        },
+        {
+          name: "Barack Obama",
+          body: "21",
         },
       ],
     },
