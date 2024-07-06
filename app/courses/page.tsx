@@ -2,19 +2,28 @@ import CourseCard from "../(components)/CourseCard";
 
 const courses: any = [
   {
-    courseTitle: "CS50",
-    teacher: "Snoop Dogg",
+    courseTitle: "CS50: Introduction to Computer Science",
+    teacher: "David J. Malan",
     image: "cs.jpg",
     link: "courses/CS50",
     description:
-      "The most comprehensive computer science course on the Internet that anyone can access!",
+      "This course teaches you how to solve problems, both with and without code, with an emphasis on correctness, design, and style.",
   },
   {
     courseTitle: "Data Structures and Algorithm",
     teacher: "Elon Musk",
     image: "ds.jpg",
-    link: "courses/DSA",
-    description: "Learn algorithms",
+    link: "/",
+    description:
+      "Embark on a journey to master the essential concepts of data structures and algorithms in this comprehensive course",
+  },
+  {
+    courseTitle: "Artificial Intelligence & Machine Learning",
+    teacher: "Sum Ting Wong",
+    image: "ai.jpg",
+    link: "/",
+    description:
+      "Unlock the potential of artificial intelligence and machine learning in this in-depth course. Designed for aspiring AI practitioners, this course covers the foundational concepts, techniques, and applications of AI and ML.",
   },
 ];
 
@@ -23,7 +32,7 @@ export default function CoursesPage() {
     <main className="m-16 mb-8">
       <section>
         <div className="flex justify-between border-b-2 border-gray-200 pb-4">
-          <h1 className="text-5xl font-bold font-mono">My Courses</h1>
+          <h1 className="text-5xl font-bold font-mono">All Courses</h1>
           <div className="flex gap-2">
             <button
               type="button"
@@ -47,7 +56,7 @@ export default function CoursesPage() {
         </div>
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-5 mt-8 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 mt-8 gap-8 mx-auto">
           {courses.map((course: any, index: number) => {
             return (
               <CourseCard
