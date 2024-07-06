@@ -18,7 +18,7 @@ const courses: any = [
   },
 ];
 
-export default function StudentPage() {
+export default function CoursesPage() {
   return (
     <main className="m-16 mb-8">
       <section>

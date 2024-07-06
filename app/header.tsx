@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
   const navigation = [
-    { name: "Courses", href: "/teacher" },
+    { name: "Courses", href: "/courses" },
     { name: "Evaluation", href: "/teacher/evaluation" },
     { name: "Find Teachers", href: "#" },
     { name: "My Profile", href: "#" },
