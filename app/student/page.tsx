@@ -1,6 +1,6 @@
 export default function StudentPage() {
   return (
-    <main className="mt-16 mb-8 mx-16">
+    <main className="m-16 mb-8">
       <section>
         <div className="flex justify-between border-b-2 border-gray-200 pb-4">
           <h1 className="text-5xl font-bold font-mono">My Courses</h1>
