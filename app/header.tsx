@@ -15,6 +15,7 @@ export default function Header() {
     { name: "Evaluation", href: "/teacher/evaluation" },
     { name: "Find Teachers", href: "#" },
     { name: "My Profile", href: "#" },
+    { name: "My Resources", href: "/resources" },
   ];
 
   const onSignOut = async (e: React.FormEvent) => {
