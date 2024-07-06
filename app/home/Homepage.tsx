@@ -3,6 +3,7 @@
 import { doSignOut } from "@/firebase/auth";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; 
+import { FaChalkboardTeacher, FaBook } from 'react-icons/fa';
 
 function Homepage() {
     const [errMessage, setErrMessage] = useState<string | null>(null); // Initialize errMessage as string or null
@@ -29,20 +30,24 @@ function Homepage() {
 
     return (
         <div className="flex flex-col justify-center items-center p-20 text-white">
-            <h1 className="text-2xl text-black mb-6">Homepage</h1>
-            <h2 className="text-2xl text-black mb-6">What do you want to do today?</h2>
-            <div className="flex space-x-4 mb-4">
+            <h2 className="text-4xl font-serif text-black mb-6 pb-10 ">What do you want to do today?</h2>
+            <div className="flex flex-row mb-4 mt-6 gap-16">
                 <button
                     onClick={handleLearn}
-                    className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition-colors duration-300 ease-in-out"
+                    className=" text-black h-80 w-60 p-2 rounded-2xl transition-colors duration-300 ease-in-out hover:animate-pulse 
+                    flex flex-col items-center justify-center font-serif border-2 border-transparent hover:border-gray-500 "
                 >
-                    Learn
+                  <FaBook className="text-gray-700 mb-4" size={60} />
+                  <span className="text-3xl">Learn</span>
                 </button>
+                
                 <button
                     onClick={handleTeach}
-                    className="bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition-colors duration-300 ease-in-out"
+                    className=" text-black p-2 w-60 h-80 rounded-2xl transition-colors duration-300 ease-in-out hover:animate-pulse 
+                    flex flex-col items-center justify-center font-serif border-2 border-transparent hover:border-gray-500"
                 >
-                    Teach
+                  <FaChalkboardTeacher className="text-gray-700 mb-4" size={60} /> 
+                  <span className='text-3xl'>Teach</span>
                 </button>
             </div>
             <button
