@@ -6,7 +6,7 @@ const page = () => {
     <main className="p-8">
       <div className="justify-between border-b-2 border-gray-200 pb-4">
         <div className="w-full flex justify-end">
-          <Link href={"/teacher"}>
+          <Link href={"/courses"}>
             <button type="button">Back</button>
           </Link>
         </div>
@@ -24,6 +24,11 @@ const page = () => {
           resource management, security, software engineering, and web
           development.
         </p>
+      </div>
+      <div className="w-full flex justify-end pt-8 pr-5 text-2xl ">
+        <button type="button" className=" hover:bg-red-600 hover:text-white">
+          Enroll
+        </button>
       </div>
     </main>
   );

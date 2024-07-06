@@ -5,7 +5,7 @@ const courses: any = [
     courseTitle: "CS50",
     teacher: "Snoop Dogg",
     image: "cs.jpg",
-    link: "/",
+    link: "courses/CS50",
     description:
       "The most comprehensive computer science course on the Internet that anyone can access!",
   },
@@ -13,7 +13,7 @@ const courses: any = [
     courseTitle: "Data Structures and Algorithm",
     teacher: "Elon Musk",
     image: "ds.jpg",
-    link: "/",
+    link: "courses/DSA",
     description: "Learn algorithms",
   },
 ];
