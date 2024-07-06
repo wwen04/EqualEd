@@ -8,7 +8,7 @@ export default function Header() {
     { name: "Courses", href: "/courses" },
     { name: "Evaluation", href: "/teacher/evaluation" },
     { name: "Find Teachers", href: "#" },
-    { name: "My Profile", href: "#" },
+    { name: "My Profile", href: "/profile" },
   ];
 
   if (pathname == "/login") return;
