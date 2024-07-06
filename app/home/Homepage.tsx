@@ -30,7 +30,7 @@ function Homepage() {
 
     return (
         <div className="flex flex-col justify-center items-center p-20 text-white">
-            <h2 className="text-4xl font-serif text-black mb-6 pb-10 ">What do you want to do today?</h2>
+            <h2 className="text-5xl font-serif text-black mb-6 pb-10 ">Who's logging in today?</h2>
             <div className="flex flex-row mb-4 mt-6 gap-16">
                 <button
                     onClick={handleLearn}
@@ -38,7 +38,7 @@ function Homepage() {
                     flex flex-col items-center justify-center font-serif border-2 border-transparent hover:border-gray-500 "
                 >
                   <FaBook className="text-gray-700 mb-4" size={60} />
-                  <span className="text-3xl">Learn</span>
+                  <span className="text-3xl">Student</span>
                 </button>
                 
                 <button
@@ -47,7 +47,7 @@ function Homepage() {
                     flex flex-col items-center justify-center font-serif border-2 border-transparent hover:border-gray-500"
                 >
                   <FaChalkboardTeacher className="text-gray-700 mb-4" size={60} /> 
-                  <span className='text-3xl'>Teach</span>
+                  <span className='text-3xl'>Teacher</span>
                 </button>
             </div>
             <button

@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <header className="grid grid-cols-1 lg:grid-cols-2 w-full justify-between p-4 px-16 shadow-lg">
-      <Link href="/" className="text-3xl text-green-500 font-bold my-auto">
+      <Link href="/home" className="text-3xl text-green-500 font-bold my-auto">
         EqualEd
       </Link>
       <div className="flex flex-row justify-between">
