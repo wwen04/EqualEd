@@ -35,7 +35,7 @@ const page = () => {
             </p>
             <button type="button" className="pl-6 pt-5 text-blue-600">
               <ArticleIcon className="mr-2" />
-              objectOrientedProgramming.pdf <FileDownloadIcon />{" "}
+              objectOrientedProgramming.pdf <FileDownloadIcon />
             </button>
           </div>
         </div>
