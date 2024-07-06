@@ -17,14 +17,14 @@ const CourseCard = ({
       <Link href={link}>
         <CardMedia component="img" sx={{ height: 200 }} image={image} />
         <CardContent>
-          <h1 className="line-clamp-1 text-xl font-bold">{courseTitle}</h1>
-          <Typography variant="h6" color="text.primary">
-            {teacher}
-          </Typography>
+          <h1 className="line-clamp-1 text-xl font-bold text-black">
+            {courseTitle}
+          </h1>
+          <h1 className="line-clamp-1 text-sm text-black mb-2">{teacher}</h1>
           <Typography
             variant="body2"
             color="text.secondary"
-            className="line-clamp-2"
+            className="line-clamp-3"
           >
             {description}
           </Typography>

@@ -1,20 +1,23 @@
-import CourseCard from "../(components)/CourseCard";
+import Link from "next/link";
 
 const courses: any = [
   {
-    courseTitle: "CS50",
-    teacher: "Snoop Dogg",
+    courseCode: "CS50",
+    courseTitle: "CS50: Introduction to Computer Science",
+    teacher: "David J. Malan",
     image: "cs.jpg",
     link: "/",
     description:
-      "The most comprehensive computer science course on the Internet that anyone can access!",
+      "This course teaches you how to solve problems, both with and without code, with an emphasis on correctness, design, and style.",
   },
   {
+    courseCode: "IM1003",
     courseTitle: "Data Structures and Algorithm",
     teacher: "Elon Musk",
     image: "ds.jpg",
     link: "/",
-    description: "Learn algorithms",
+    description:
+      "Embark on a journey to master the essential concepts of data structures and algorithms in this comprehensive course",
   },
 ];
 
@@ -46,18 +49,32 @@ export default function StudentPage() {
           </div>
         </div>
 
-        {/* Courses Grid */}
-        <div className="grid grid-cols-5 mt-8 gap-8">
+        <input placeholder="Search.." className="px-4 py-2" />
+
+        {/* Course Progress */}
+        <div className="flex flex-col w-full gap-4">
           {courses.map((course: any, index: number) => {
             return (
-              <CourseCard
+              <Link
+                href="/"
+                className="w-full border border-gray-300 rounded-xl flex flex-row overflow-clip group"
                 key={index}
-                courseTitle={course.courseTitle}
-                image={course.image}
-                teacher={course.teacher}
-                link={course.link}
-                description={course.description}
-              />
+              >
+                <img
+                  src={course.image}
+                  alt={course.courseCode}
+                  className="object-cover w-16 h-48 group-hover:w-72 transition-all"
+                />
+                <div className="flex flex-col p-4">
+                  <h1 className="text-3xl text-black font-bold">
+                    {course.courseCode}
+                  </h1>
+                  <h2 className="text-xl text-black font-semibold">
+                    {course.courseTitle}
+                  </h2>
+                  <h2 className="text-black">{course.teacher}</h2>
+                </div>
+              </Link>
             );
           })}
         </div>
