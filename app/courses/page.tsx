@@ -13,7 +13,7 @@ const courses: any = [
     courseTitle: "Data Structures and Algorithm",
     teacher: "Elon Musk",
     image: "ds.jpg",
-    link: "/",
+    link: "courses/DSA",
     description:
       "Embark on a journey to master the essential concepts of data structures and algorithms in this comprehensive course",
   },
@@ -21,7 +21,7 @@ const courses: any = [
     courseTitle: "Artificial Intelligence & Machine Learning",
     teacher: "Sum Ting Wong",
     image: "ai.jpg",
-    link: "/",
+    link: "courses/AI&ML",
     description:
       "Unlock the potential of artificial intelligence and machine learning in this in-depth course. Designed for aspiring AI practitioners, this course covers the foundational concepts, techniques, and applications of AI and ML.",
   },
