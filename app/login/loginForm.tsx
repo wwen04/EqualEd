@@ -8,6 +8,24 @@ function LoginForm(){
     const [isSigningIn, setIsSigningIn] = useState(false);
     const [isTeacher, set] = useState(false);
 
+
+    // const onSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     if (!isSigningIn) {
+    //       setIsSigningIn(true);
+    //       try {
+    //         await doSignInWithEmailAndPassword(email, password);
+    //         navigate('/home');
+    //       } catch (error) {
+    //         if (error instanceof Error) {
+    //           alert('Error: Invalid credentials');
+    //         }
+    //         setIsSigningIn(false); // Reset signing-in state
+    //       }
+    //     }
+    //   };
+
+    
     return (
         <div className="flex flex-col justify-center p-20 items-center text-white m-0">
             <form className="flex flex-col">
