@@ -7,7 +7,7 @@ const page = () => {
       title: "Rate my teaching material",
       author: "Arnav Krishnan",
       content: "Please rate my presentation slides that I made out of 10.",
-      subject: "Malay",
+      subject: "Mathematics",
       comment: [
         {
           name: "Lee Chong Wei",
@@ -23,7 +23,7 @@ const page = () => {
       title: "What do I need to do to improve my teaching skills",
       author: "Fan Bing Bing",
       content:
-        "Im bouta teach some little kids, how do I interact with them better?",
+        "Im bouta teach some little kids mandarin, how do I interact with them better?",
       subject: "Mandarin",
       comment: [
         {
