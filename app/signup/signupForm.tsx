@@ -38,7 +38,7 @@ function SignupForm() {
           placeholder="First Name"
           onChange={(e) => setFirstName(e.target.value)}
           required
-          className="w-full p-2 mb-4 text-black rounded-md"
+          className="w-full p-2 mb-2 text-black rounded-md"
         />
         <input
           type="lastname"
@@ -46,7 +46,7 @@ function SignupForm() {
           placeholder="Last Name"
           onChange={(e) => setLastName(e.target.value)}
           required
-          className="w-full p-2 mb-4 text-black rounded-md"
+          className="w-full p-2 mb-2 text-black rounded-md"
         />
         <input
           type="email"
@@ -54,7 +54,7 @@ function SignupForm() {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full p-2 mb-4 text-black rounded-md"
+          className="w-full p-2 mb-2 text-black rounded-md"
         />
         <input
           type="password"
@@ -62,7 +62,7 @@ function SignupForm() {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full p-2 mb-4 text-black rounded-md"
+          className="w-full p-2 mb-2 text-black rounded-md"
         />
         <button
           type="submit"

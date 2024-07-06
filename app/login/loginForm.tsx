@@ -25,11 +25,13 @@ function LoginForm(){
     //     }
     //   };
 
-    
+
     return (
         <div className="flex flex-col justify-center p-20 items-center text-white m-0">
-            <form className="flex flex-col">
+            <h1 className="text-white text-2xl mb-4 "> EqualEd</h1>
+            <form className="flex flex-col ">
                 <input
+                    className='w-full text-black mb-2'
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -37,6 +39,7 @@ function LoginForm(){
                     required
                 />
                 <input 
+                    className='w-full text-black mb-2'
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -46,7 +49,7 @@ function LoginForm(){
                 <button
                     type="submit"
                     disabled={isSigningIn}
-                    className={`bg-blue-500 text-white p-2 rounded-lg ${isSigningIn ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 transition duration-300'}`}
+                    className={`bg-blue-500 text-white p-2 mt-2 rounded-lg ${isSigningIn ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700 transition duration-300'}`}
                 >
                     {isSigningIn ? 'Signing In...' : 'Login'}
                 </button>
