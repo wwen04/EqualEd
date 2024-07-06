@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
   const navigation = [
-    { name: "Courses", href: "/" },
-    { name: "Evaluation", href: "#" },
+    { name: "Courses", href: "/teacher" },
+    { name: "Evaluation", href: "/teacher/evaluation" },
     { name: "Find Teachers", href: "#" },
     { name: "My Profile", href: "#" },
   ];
@@ -22,14 +22,15 @@ export default function Header() {
             const isActive = pathname === item.href; // Check active link
 
             return (
-              <button
+              <Link
+                href={item.href}
                 key={item.name}
                 className={`py-1 px-4 rounded-full ${
                   isActive ? "bg-green-700 text-white" : "text-black"
                 }`}
               >
                 {item.name}
-              </button>
+              </Link>
             );
           })}
         </nav>
