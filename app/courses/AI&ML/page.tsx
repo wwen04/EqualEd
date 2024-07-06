@@ -11,6 +11,7 @@ const pageInfo = {
     "While artificial intelligence encompasses the idea of a machine that can mimic human intelligence, machine learning does not. Machine learning aims to teach a machine how to perform a specific task and provide accurate results by identifying patterns.",
 };
 
-export default function Page() {
-  return <CoursePage pageInfo={pageInfo} />;
+export default function Page({ searchParams }: any) {
+  const preferrence = decodeURIComponent(searchParams.pref) || "English";
+  return <CoursePage pageInfo={pageInfo} preferrence={preferrence} />;
 }
