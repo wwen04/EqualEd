@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default async function CoursePage({
   pageInfo,
-  preferrence,
+  language,
+  level,
 }: {
   pageInfo: {
     courseCode: string;
@@ -12,31 +13,42 @@ export default async function CoursePage({
     link: string;
     description: string;
   };
-  preferrence: string;
+  language: string;
+  level: string;
 }) {
+  language ??= "English";
+  level ??= "3";
   const { G4F } = require("g4f");
   const g4f = new G4F();
+
+  const levelMapping: any = {
+    "1": "Primary School Student",
+    "2": "Secondary School Student",
+    "3": "Adult",
+  };
+
+  // Description Prompt
   const description = [
     {
       role: "system",
       content:
-        "You're an expert in translation and rewording. When asked anything, you should only translate the text directly and not ask questions or anything.",
+        "You're an expert in translation and rewording. When asked anything, you should only translate the text directly and not ask questions or anything. This text will be the course description of a course. You should not reply or ask anything else.",
     },
     {
       role: "user",
-      content: `Reword or translate the following in ${preferrence}: ${pageInfo.description}`,
+      content: `Translate the following in ${language} like I am a ${levelMapping[level]}, answer only: ${pageInfo.description}`,
     },
   ];
 
+  /// Course Title Prompt
   const courseTitle = [
     {
       role: "system",
-      content:
-        "You're an expert in translation and rewording. When asked anything, you should only translate the text directly and not ask questions or anything.",
+      content: "You are an expert translator bot.",
     },
     {
       role: "user",
-      content: `Reword or translate the following in ${preferrence}: ${pageInfo.courseTitle}`,
+      content: `Translate the following in ${language}, answer only: ${pageInfo.courseTitle}`,
     },
   ];
 
@@ -44,13 +56,7 @@ export default async function CoursePage({
   const translated_description = await g4f.chatCompletion(description);
 
   return (
-    <main className="p-16">
-      <div className="w-full flex justify-end">
-        <Link href={"/courses"}>
-          <button type="button">Back</button>
-        </Link>
-      </div>
-
+    <main className="px-16">
       {/* Course Banner */}
       <div className="relative mb-8">
         <img
@@ -81,6 +87,31 @@ export default async function CoursePage({
 
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div>
+            <div className="flex flex-row my-4 items-center">
+              <h1 className="font-semibold text-xl mr-4">
+                Understanding level:
+              </h1>
+              <div className="flex flex-row">
+                <Link
+                  href="/courses/CS50?level=1"
+                  className="p-2 px-4 rounded-l-full bg-green-500 hover:bg-green-700 hover:text-white text-black"
+                >
+                  Primary School
+                </Link>
+                <Link
+                  href="/courses/CS50?level=2"
+                  className="p-2 px-4 bg-green-500 hover:bg-green-700 hover:text-white text-black"
+                >
+                  Secondary School
+                </Link>
+                <Link
+                  href="/courses/CS50?level=3"
+                  className="p-2 px-4 rounded-r-full bg-green-500 hover:bg-green-700 hover:text-white text-black"
+                >
+                  Adult
+                </Link>
+              </div>
+            </div>
             <h1 className="text-3xl my-4 font-serif">
               Course Description & Objectives
             </h1>
