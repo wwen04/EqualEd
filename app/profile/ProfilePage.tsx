@@ -9,12 +9,15 @@ function ProfilePage() {
       <div className="flex">
         <div className="flex flex-col items-center mr-8">
           <Image
+            className="rounded-full"
             alt="Sodium_Chloridy "
             height={150}
             width={150}
             src="https://cn.i.cdn.ti-platform.com/cnapac/content/701/showpage/we-bare-bears/sa/showicon.png"
           />
-          <p className="my-4">Sodium_Chloridy #1026</p>
+          <p className="my-4">
+            <span className="font-bold">Sodium_Chloridy </span>#1026
+          </p>
         </div>
         <div className="flex flex-col">
           <div className="flex flex-row">
