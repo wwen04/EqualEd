@@ -1,9 +1,9 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { doCreateUser } from '@/firebase/auth';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 function SignupForm() {
   const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ function SignupForm() {
   const [password, setPassword] = useState('');
   const [isSigningUp, setIsSigningUp] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [accountType, setAccountType] = useState('student'); // Add state for account type
+  const router = useRouter();
 
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -22,10 +22,11 @@ function SignupForm() {
       setError(null); // Reset previous error
       try {
         await doCreateUser(email, password, firstName, lastName);
-        redirect(accountType === 'student'? '/student' : '/teacher');
+        router.push('/login');
       } catch (error) {
+        console.log(error);
         if (error instanceof Error) {
-          alert('Error signing up, please enter valid email and password')
+          alert('Error signing up, please enter valid email and password');
         }
         setIsSigningUp(false); // Reset signing-in state
       }
@@ -35,7 +36,7 @@ function SignupForm() {
   return (
     <div className="flex flex-col justify-center p-20 items-center text-white m-0">
       <h2 className="text-2xl mb-6">Create an account</h2>
-      <form onSubmit = { onSubmit }>
+      <form onSubmit = { onSubmit }  method="POST">
         <input
           type="firstname"
           name="firstname"
@@ -68,23 +69,6 @@ function SignupForm() {
           required
           className="w-full p-2 mb-2 text-black rounded-md"
         />
-        <p> Choose your account type: </p>
-        <div className="flex justify-items-stretch w-full mb-2 ">
-          <button
-            type="button"
-            className={`p-2 rounded-md ${accountType === 'student' ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black'}`}
-            onClick={() => setAccountType('student')}
-          >
-            Student
-          </button>
-          <button
-            type="button"
-            className={`p-2 rounded-md ${accountType === 'teacher' ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black'}`}
-            onClick={() => setAccountType('teacher')}
-          >
-            Teacher
-          </button>
-        </div>
         <button
           type="submit"
           className="bg-blue-600 text-white p-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300 ease-in-out"
