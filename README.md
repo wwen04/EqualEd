@@ -1,6 +1,8 @@
+![image](https://github.com/user-attachments/assets/14f068a9-7fd7-4b4e-8ca1-894391cb33d0)
+
 # EqualEd
 
-EqualEd is a Next.js-based educational platform designed to provide equal learning opportunities through online courses and resources.
+EqualEd is a Next.js-based educational platform designed to provide equal learning opportunities through online courses and resources via AI-powered translations.
 
 ## Project Overview
 
