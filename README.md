@@ -16,11 +16,15 @@ This platform features:
 ## Getting Started
 
 First, set up your environment:
-1. Clone the repository
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/wwen04/EqualEd.git
+   ```
 2. Copy `.env.example` to `.env` and configure your environment variables. You can get your own GEMINI_API_KEY from [Google AI Studio](https://aistudio.google.com/apikey).
 
 Next, install dependencies:
 ```bash
+cd EqualEd     #cd into root directory if you haven't already do so
 npm install
 ```
 
