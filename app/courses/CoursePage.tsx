@@ -1,4 +1,5 @@
 import Link from "next/link";
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 export default async function CoursePage({
   pageInfo,
@@ -16,10 +17,15 @@ export default async function CoursePage({
   language: string;
   level: string;
 }) {
-  language ??= "English";
-  level ??= "3";
-  const { G4F } = require("g4f");
-  const g4f = new G4F();
+  const lang = language ?? "English";
+  const lvl = level ?? "3";
+
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    systemInstruction:
+      "You're a translation bot, but if it's already in the language, keep it. When asked anything, you should only translate the text directly and not ask questions or anything. You should not reply or ask anything else.",
+  });
 
   const levelMapping: any = {
     "1": "Primary School Student",
@@ -27,33 +33,31 @@ export default async function CoursePage({
     "3": "Adult",
   };
 
-  // Description Prompt
-  const description = [
-    {
-      role: "system",
-      content:
-        "You're an expert in translation and rewording. When asked anything, you should only translate the text directly and not ask questions or anything. This text will be the course description of a course. You should not reply or ask anything else.",
-    },
-    {
-      role: "user",
-      content: `Translate the following in ${language} like I am a ${levelMapping[level]}, answer only: ${pageInfo.description}`,
-    },
-  ];
+  const translated_courseTitle = await model
+    .generateContent(
+      `Translate the following in ${lang}, answer only: ${pageInfo.courseTitle}`
+    )
+    .then((data: any) => {
+      console.log(data.response.text());
+      return data.response.text();
+    })
+    .catch((error: any) => {
+      console.error("Translation error for course title:", error);
+      return pageInfo.courseTitle; // Fall back to original text if translation fails
+    });
 
-  /// Course Title Prompt
-  const courseTitle = [
-    {
-      role: "system",
-      content: "You are an expert translator bot.",
-    },
-    {
-      role: "user",
-      content: `Translate the following in ${language}, answer only: ${pageInfo.courseTitle}`,
-    },
-  ];
-
-  const translated_courseTitle = await g4f.chatCompletion(courseTitle);
-  const translated_description = await g4f.chatCompletion(description);
+  const translated_description = await model
+    .generateContent(
+      `Translate the following in ${lang} like I am a ${levelMapping[lvl]}, answer only: ${pageInfo.description}`
+    )
+    .then((data: any) => {
+      console.log(data.response.text());
+      return data.response.text();
+    })
+    .catch((error: any) => {
+      console.error("Translation error for course title:", error);
+      return pageInfo.courseTitle; // Fall back to original text if translation fails
+    });
 
   return (
     <main className="px-16">

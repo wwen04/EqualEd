@@ -13,5 +13,5 @@ const pageInfo = {
 
 export default function Page({ searchParams }: any) {
   const preferrence = decodeURIComponent(searchParams.pref) || "English";
-  return <CoursePage pageInfo={pageInfo} preferrence={preferrence} />;
+  return <CoursePage pageInfo={pageInfo} language={preferrence} level="Beginner" />;
 }
