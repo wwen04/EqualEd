@@ -43,3 +43,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 The application is configured for easy deployment on [Vercel](https://vercel.com/new).
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Contributors
+
+<a href="https://github.com/wwen04/EqualEd/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wwen04/EqualEd" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
